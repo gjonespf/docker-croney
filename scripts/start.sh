@@ -2,6 +2,8 @@
 
 logger "storagemgr started"
 
+chmod +x /app/scripts/init/*.sh
+
 for SCRIPT in /app/scripts/init/*
 	do
 		if [ -f $SCRIPT -a -x $SCRIPT ]
@@ -10,4 +12,3 @@ for SCRIPT in /app/scripts/init/*
 			$SCRIPT
 		fi
 	done
-	
