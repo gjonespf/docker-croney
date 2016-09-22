@@ -1,5 +1,6 @@
 #TODO: Possibly use a generic toolbox image after all?
-FROM     gliderlabs/alpine:3.3
+#gliderlabs/alpine:3.3 - due to glibc requirements
+FROM     frolvlad/alpine-glibc:alpine-3.4
 
 #Tools
 RUN      apk  --no-cache add \
