@@ -1,3 +1,13 @@
 #!/bin/bash
+
 logger "storagemgr started"
-/app/scripts/start-cron.sh
+
+for SCRIPT in /app/scripts/init/*
+	do
+		if [ -f $SCRIPT -a -x $SCRIPT ]
+		then
+         echo "Running script $SCRIPT"
+			$SCRIPT
+		fi
+	done
+	

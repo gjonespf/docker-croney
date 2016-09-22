@@ -9,5 +9,7 @@ COPY ./scripts scripts
 RUN chmod +x /app/scripts/*.sh
 RUN touch /var/log/cron.log
 
+VOLUME ["/app/scripts","/etc/cron.d/"]
+
 #CMD ["tail", "-f", "/var/log/cron.log"]
 CMD ["/app/scripts/start.sh", "", ""]
