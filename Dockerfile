@@ -5,9 +5,11 @@ RUN pip install https://bitbucket.org/dbenamy/devcron/get/tip.tar.gz
 
 WORKDIR /app
 COPY files/crontab /etc/cron.d/crontab
-COPY ./scripts scripts
-RUN chmod +x /app/scripts/*.sh
 RUN touch /var/log/cron.log
+COPY ./scripts scripts
+WORKDIR /app/scripts
+RUN chmod -R +x *.sh
+
 
 VOLUME ["/app/scripts","/etc/cron.d/"]
 
