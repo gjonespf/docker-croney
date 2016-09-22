@@ -6,13 +6,15 @@ RUN      apk  --no-cache add \
          bash \
          ca-certificates \
          nano \
+         curl \
          jq
 
 #DevCron requirements - todo devcron tag?
+RUN      apk  --no-cache add \
+         python 
 #TODO: Build bins separately, and introduce them to minimise image?
 # Cause this pulls in lots of crap... 217MB to be exact...
 RUN      apk  --no-cache add --virtual build-dependencies \
-         python \
          python-dev \
          py-pip \
          build-base \
