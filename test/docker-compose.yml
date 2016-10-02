@@ -1,0 +1,9 @@
+version: '2'
+services:
+
+   croney-test:
+      restart: never
+      build:
+         context: ..
+         dockerfile: Dockerfile
+      image: gavinjonespf/docker-croney-test:latest
