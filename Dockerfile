@@ -10,11 +10,8 @@ RUN      apk  --no-cache add \
          curl \
          jq
 
-#DevCron requirements - todo devcron tag?
 RUN      apk  --no-cache add \
          python 
-#TODO: Build bins separately, and introduce them to minimise image?
-# Cause this pulls in lots of crap... 217MB to be exact...
 RUN      apk  --no-cache add --virtual build-dependencies \
          python-dev \
          py-pip \
@@ -29,9 +26,5 @@ COPY ./scripts scripts
 WORKDIR /app/scripts
 RUN chmod -R +x *.sh
 
-#VOLUME ["/app/scripts","/etc/cron.d/"]
-
-#CMD ["tail", "-f", "/var/log/cron.log"]
 ENTRYPOINT [ "/app/scripts/start.sh" ]
-#"/app/scripts/start.sh", 
 CMD ["/etc/cron.d/crontab", ""]
