@@ -32,4 +32,6 @@ RUN chmod -R +x *.sh
 #VOLUME ["/app/scripts","/etc/cron.d/"]
 
 #CMD ["tail", "-f", "/var/log/cron.log"]
-CMD ["/app/scripts/start.sh", "", ""]
+ENTRYPOINT [ "/app/scripts/start.sh" ]
+#"/app/scripts/start.sh", 
+CMD ["/etc/cron.d/crontab", ""]

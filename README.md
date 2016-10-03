@@ -6,4 +6,5 @@ TODO:
 - Documentation
 
 On Docker Hub as:
-https://hub.docker.com/r/gavinjonespf/docker-croney/
+- https://hub.docker.com/r/gavinjonespf/docker-croney/
+- docker pull gavinjonespf/docker-croney

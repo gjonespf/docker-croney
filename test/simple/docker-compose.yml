@@ -4,6 +4,6 @@ services:
    croney-test:
       restart: never
       build:
-         context: ..
+         context: ../..
          dockerfile: Dockerfile
       image: gavinjonespf/docker-croney-test:latest

@@ -9,6 +9,6 @@ for SCRIPT in /app/scripts/init/*
 		if [ -f $SCRIPT -a -x $SCRIPT ]
 		then
          echo "Running script $SCRIPT"
-			$SCRIPT
+			$SCRIPT $@
 		fi
 	done

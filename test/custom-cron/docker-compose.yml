@@ -1,0 +1,17 @@
+version: '2'
+services:
+
+   croney-test:
+      restart: never
+      build:
+         context: ../..
+         dockerfile: Dockerfile
+      image: gavinjonespf/docker-croney-test:latest
+
+   croney-test-cron:
+      restart: never
+      build:
+         context: .
+         dockerfile: Dockerfile
+      image: gavinjonespf/docker-croney-testcron:latest
+      command: /etc/cron.d/customcrontab
